@@ -1,0 +1,382 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class],a {
+  text-decoration: none;
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+         -o-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@font-face {
+    font-family: "Gilroy";
+    src: url("../fonts/Gilroy-Light.otf") format("otf"),
+         url("../fonts/Gilroy-Medium.woff") format("woff"),
+         url("../fonts/Gilroy-Medium.ttf") format("ttf");
+         font-weight: 500;
+}
+@font-face {
+    font-family: "Gilroy";
+    src: url("../fonts/Gilroy-ExtraBold.woff") format("woff");
+    font-weight: 800;
+}
+body{
+    height: 100%;
+    font-family: 'Gilroy';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1;
+    color: #070707;
+}
+.wrapper{
+    min-height: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 150px;
+}
+._container{
+    max-width: 970px;
+    margin: 0 auto;
+    position: relative;
+}
+.header{
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    padding:  0 10px;
+}
+.menu_list{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    position: relative;
+}
+.menu{
+    position: absolute;
+    width: 100%;
+}
+.header_container{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 90px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.menu_link{
+    color:#828282;
+    line-height: 157%;
+    font-weight: 800;
+}
+.menu_list{
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+}
+.active{
+    color: #070707;
+}
+
+/* @media(max-width:768px){
+    .menu_burger{
+        position: relative;
+        width: 40px;
+        height: 35px;
+        display: block;
+        margin: 30px 0 0 40px;
+    }
+    .menu_burger span, .menu_burger::after, .menu_burger::before{
+        height: 3px;
+        width: 100%;
+        position: absolute;
+        background: #515758;
+        margin: 0 auto;
+    }
+    .menu_burger span{
+        top:21px;
+    }
+    .menu_burger::after,.menu_burger::before{
+        content: '';
+    }
+    .menu_burger::after{
+        bottom: 0px;
+    }
+    .menu_burger::before{
+        top: 10px;
+    }
+    .menu{
+        display: none;
+    }
+} */
+
+
+
+
+@media(max-width:425px){
+    .menu_item:not(:last-child){
+        margin: 0 9px 0 0;
+    }
+}
+.hr_line{
+    width: 100%;
+    color: #828282;
+    top:40px;
+    position: relative;
+    height: 2px;
+    background-color: #828282;
+    border:#828282;
+}
+
+/* ------------------------- */
+
+
+.section{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    width: 100%;
+    padding: 60px 10px;
+    background-color: #fff;
+}
+.section h1{
+    line-height: 35px;
+}
+.text{
+    -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    top: -27px;
+    position: relative;
+}
+.img{
+    width: 100%;
+    height: 430px;
+    top: -451px;
+    z-index: -1;
+}
+.cl_img{
+    padding-bottom: 20px;
+}
+@media(max-width:768px){
+    .img{
+        top:-305px;}
+}
+@media(max-width:425px){
+    .img{
+        top:-135px;}
+}
+
+.about_me{
+    background-color: #F6F6F6;
+    margin-top: 100px;
+}
+
+.sec{
+    text-align: center;
+    padding: 120px 10px;
+}
+.toc{
+    font-size: 34px;
+    font-weight: 800;
+}
+.sec p{
+    line-height: 25px;
+    margin:60px 0;
+}
+.box{
+    padding: 110px 0;
+}
+.progi{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+.star{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.star img{
+    padding: 0 5px;
+}
+.ex{
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+.ex p{
+    margin: 25px 0 40px 0;
+}
+.ex1{
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+.portfolio{
+    background-color: #F6F6F6;
+}
+.blok {
+    margin: 60px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.blok p{
+    text-decoration: underline;
+}
+.footer{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.icon{
+    min-width: 30%;
+    margin-top: 70px;
+}
+.button{
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+.button_button{
+    background: #070707;
+    border-radius: 37px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    min-height: 48px;
+    /* letter-spacing: 0.2px; */
+    color: #fff;
+    text-align: center;
+    padding: 5px 30px;
+}
+
+
+
+
